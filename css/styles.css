@@ -72,30 +72,30 @@ li {
 }
 
 .section-text {
-    font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #434455
+    color: #434455;
+    text-align: center;
 }
 
 .list-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #2E2F42;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11111;
     text-align: center;
+    color: #2e2f42;
 }
 
 .section-title {
+    font-weight: 700;
     font-size: 36px;
-    line-height: 1.11;
+    line-height: 1.11111;
     letter-spacing: 0.02em;
     text-transform: capitalize;
-    font-weight: 700;
-    color: #2E2F42;
     text-align: center;
+    color: #2e2f42;
     }
    
 
@@ -310,6 +310,23 @@ header {
     display: none;
 }
 
+.advantages-list-title {
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    text-align: center;
+}
+
+.advantages-section-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455
+}
+
 @media screen and (min-width: 768px) {
     .container {
         width: 768px;
@@ -357,13 +374,13 @@ header {
         gap: 24px;
     }
 
-    .list-title {
+    .advantages-list-title {
         font-size: 20px;
         font-weight: 500;
         line-height: 1.2;
     }
 
-    .section-text {
+    .advantages-section-text {
         font-weight: 400;
     }
 }
@@ -381,8 +398,8 @@ header {
 
 .our-team-list {
     display: flex;
-    justify-content: center;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 72px;
 }
 
 .our-team-item {
@@ -390,12 +407,17 @@ header {
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     background: #fff;
-    max-width: 264px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.our-team-image {
+    margin: 0 auto;
+    width: 100%;
 }
 
 .sotial-icons-wrapper {
@@ -431,17 +453,6 @@ header {
     max-width: 232px;
 }
 
-.our-team-img {
-   
-}
-
-.list-title {
-    
-}
-
-.section-text {
-   
-}
 
 .our-team-wrap {
     max-width: 232px;
@@ -453,6 +464,30 @@ header {
     justify-content: space-between;
     gap: 8px;
     
+}
+
+@media screen and (min-width: 768px) {
+    .our-team-container {
+        width: 552px;
+}
+    .our-team-list {
+        gap: 64px 24px;
+    }
+    .our-team-item {
+        width: calc((100% - 24px) / 2);
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .our-team-container {
+            width: 1158px;
+        }
+    .our-team-list {
+            gap: 24px;
+    }
+     .our-team-item {
+            width: calc((100% - 3*24px) / 4);
+    }
 }
 
 
