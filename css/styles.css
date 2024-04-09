@@ -108,8 +108,10 @@ header {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
-    width: 1158px;
+    width: 320px;
     margin: 0 auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 /* Logo */
@@ -122,7 +124,6 @@ header {
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    /* margin-right: 76px; */
 }
 
 .header-logo-part {
@@ -147,7 +148,8 @@ header {
 }
 
 .header-navigation-list {
-    display: flex;
+    /* display: flex; */
+    display: none;
     gap: 40px;
 }
 
@@ -199,6 +201,7 @@ header {
 /* Contacts */
 
 .header-adress {
+    display: none;
     font-style: normal;
 }
 
@@ -216,12 +219,101 @@ header {
 
 .header-adress-list {
     display: flex;
-    gap: 40px;
+}
+
+.header-menu-btn {
+    fill: #2F2F37;
+    border: none;
+    padding: 0;
+    line-height: 0;
+    background-color: transparent;
 }
 
 /* .header-adress-item:first-child {
     margin-right: 40px;
 } */
+
+
+/* BURGER MENU */
+
+.burger-menu {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    padding:  24px 24px 40px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.menu-close-btn {
+    display: block;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-bottom: 24px;
+    background-color: transparent;
+}
+
+.burger-navigation-list {
+    margin-bottom: 50px;
+}
+
+/* .burger-navigation-list:first-child {
+    color: #4d5ae5;
+} */
+
+.burger-navigation-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.burger-navigation-link {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #2e2f42;
+}
+
+.burger-navigation-link-main {
+    color: #404bbf;
+}
+
+.burger-adress {
+    margin-bottom: 48px;
+}
+
+.burger-adress-list .burger-contacts-tel {
+    color: #4d5ae5;
+}
+
+.burger-adress-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.burger-contacts {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+.burger-sotial-icons {
+    gap: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 280px;
+}
 
 /* Banner */
 
@@ -615,8 +707,8 @@ footer {
 }
 
 .modal {
-    width: 408px;
-    min-height: 584px;
+    width: 288px;
+    min-height: 623px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     border-radius: 4px;
@@ -624,7 +716,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px 16px 16px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -759,6 +851,8 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .check-text {
+    display: flex;
+    align-items: center;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -798,10 +892,57 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 24px;
 }
 
+/* ADAPTIVE */
+
+/* HEADER */
+
+@media screen and (min-width: 768px) {
+    header {
+        width: 768px;
+        padding: 0;
+    }
+
+    .logo {
+        margin-right: 120px;
+    }
+
+    .header-navigation-list {
+        display: flex;
+    }
+
+    .header-adress {
+        display: block;
+    }
+
+    .header-adress-list {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-menu-btn {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    header {
+        width: 1158px;
+    }
+
+    .logo {
+        margin-right: 76px;
+    }
+
+    .header-adress-list {
+        flex-direction: row;
+        gap: 40px;
+    }
+}
+
 /* BANNER */
 
 @media screen and (min-width: 768px) {
-
+    
     .banner {
         width: 768px;
         padding-top: 112px;
@@ -827,6 +968,7 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media screen and (min-width: 1158px) {
+
     .banner {
         width: 1440px;
         padding-top: 188px;
@@ -874,7 +1016,6 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
         padding-top: 120px;
         padding-bottom: 120px;
     }
-
 
     .advantages-icon-wrapper {
         border: 1px solid #8e8f99;
@@ -1028,3 +1169,22 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
         margin-right: 80px;
     }
 }
+
+/* MODAL */
+
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 408px;
+        min-height: 584px;
+        padding: 72px 24px 24px 24px;
+    }
+
+    .privacy-text {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+    }
+}
+/* MODAL */
+
+/* ADAPTIVE */
